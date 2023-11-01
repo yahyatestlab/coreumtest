@@ -1,0 +1,44 @@
+{
+  "name": "coreum",
+  "version": "0.0.1",
+  "description": "Index coreum blockchain",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "subql build",
+    "codegen": "subql codegen",
+    "start:docker": "docker compose pull && docker compose up --remove-orphans",
+    "dev": "subql codegen && subql build && docker compose pull && docker compose up --remove-orphans",
+    "prepack": "rm -rf dist && npm run build",
+    "test": "jest"
+  },
+  "homepage": "https://github.com/egabee/subqueries",
+  "repository": "github:egabee/subqueries",
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "Egabee Team",
+  "devDependencies": {
+    "@cosmjs/stargate": "^0.28.9",
+    "@subql/cli": "latest",
+    "@subql/node-cosmos": "latest",
+    "@subql/testing": "latest",
+    "@subql/types-core": "^0.3.0",
+    "@types/is-base64": "^1.1.2",
+    "long": "^5.2.3",
+    "protobufjs": "^7.2.5",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@cosmjs/tendermint-rpc": "^0.31.3",
+    "@subql/types-cosmos": "latest",
+    "@types/node": "^17.0.21",
+    "dotenv": "^16.3.1",
+    "is-base64": "^1.1.0",
+    "kafkajs": "^2.2.4",
+    "pino": "^7.8.0",
+    "ts-proto": "^1.112.1",
+    "tslib": "^2.3.1"
+  }
+}
